@@ -1,4 +1,4 @@
-
+import Logo from './../../assets/react.svg'
 interface SidebarProps {
   sidebarOpen: boolean;
   setSidebarStatic: Function;
@@ -30,6 +30,12 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen, sidebarStatic, setSidebarStatic 
       onMouseLeave={handleMouseLeave}
     >
       <div className="flex items-center justify-between p-4">
+        <div className='flex'>
+          <img src={Logo} alt="Logo" width={35}  className={`${sidebarOpen ? '' : 'mr-6'} ml-2 mr-2`}/>
+          <div className={`text-lg lg:text-xl font-bold flex`}>
+            Categorias
+          </div>   
+        </div>  
         <button
           tabIndex={-1}
           onClick={handleClickHamburger}
