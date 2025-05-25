@@ -1,5 +1,6 @@
 import  { useState, ReactNode, useEffect, useRef } from 'react';
-import Header from './header';
+import Header from './Header';
+import Sidebar from './Sidebar/Sidebar';
 interface DefaultLayout {
   children: ReactNode;
   panel?: {
@@ -40,6 +41,20 @@ const DefaultLayout: React.FC<DefaultLayout> = ({ children, panel }) => {
   return (
     <div className={`overflow-hidden `}>
       <div className="flex h-screen w-full relative">
+        <div
+          ref={sidebarRef}
+          className={`w-0 sm:block absolute z-110 overflow-hidden transition-all duration-300 
+            ${sidebarOpen ? 'sm:!w-64' : 'w-0 sm:!w-20 '}
+            ${sidebarStatic ? '!w-64' : '!w-0'}
+          `}
+        >
+          <Sidebar
+            sidebarOpen={sidebarOpen}
+            setSidebarOpen={setSidebarOpen}
+            setSidebarStatic={setSidebarStatic}
+            sidebarStatic={sidebarStatic}
+          />
+        </div>
         <div className={`${sidebarStatic ? '1.2xl:pl-64 sm:pl-20' : 'sm:pl-20'} bg-blue-100 transition-all duration-300 flex w-full flex-col relative`}>
           <Header
             sidebarOpen={sidebarOpen}
