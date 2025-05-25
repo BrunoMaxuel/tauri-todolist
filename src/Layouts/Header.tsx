@@ -17,7 +17,7 @@ const Header = ({ sidebarOpen, setSidebarOpen, setSidebarStatic, sidebarStatic}:
 
   return (
     <header className="relative px-4 py-1 top-0 z-101 flex w-full bg-slate-700">
-      <div className={`flex flex-grow items-center justify-between `}>          
+      <div className={`flex flex-grow items-center justify-between `}>       
         <button
           tabIndex={-1}
           onClick={handleClickHamburger}
