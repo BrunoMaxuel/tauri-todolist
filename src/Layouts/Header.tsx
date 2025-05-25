@@ -22,10 +22,11 @@ const Header = ({ sidebarOpen, setSidebarOpen, setSidebarStatic, sidebarStatic}:
           tabIndex={-1}
           onClick={handleClickHamburger}
           className={`
-              relative h-10 w-10 flex justify-center items-center rounded border border-slate-700 bg-slate-500 hover:bg-slate-400: hover:border-slate-500
+            relative h-10 w-10 flex justify-center items-center rounded border border-slate-700 bg-slate-500 hover:bg-slate-400: hover:border-slate-500
+            cursor-pointer
           `}
         >
-          <div className="absolute cursor-pointer">
+          <div className="absolute">
             <div
               className={`my-[3px] h-[3px] w-6 rounded bg-black ease-in-out delay-200 duration-200
               `}
